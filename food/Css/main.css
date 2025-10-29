@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+* {
+  margin: 5px;
+  font-family: "Chakra Petch", sans-serif;
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* خلفية الصفحة */
+body {
+  background-image: url('/img/background.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+img.logo {
+  width: 120px;
+  height: auto;
+  margin-top: -4px; 
+}
+
+/* الروابط */
+a {
+  color: white;
+  margin-top: 20px; 
+  font-size: 20px;
+}
+a:hover {
+  color: orange;
+}
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.slider ul {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+
+.slider li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.pizza img {
+    margin-top: 10%;
+}
+
+
+.slider li.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* عند دخول الصورة الجديدة */
+.slider li.incoming {
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+/* دخول ناعم */
+.slider li.fade-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* خروج ناعم */
+.slider li.fade-out {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+
+.slider img {
+  width: 60%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* الأسهم */
+.arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(90deg, #f64c18, #ee9539);
+  border: none;
+  z-index: 1000;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* تأثير عند المرور */
+.arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 0 25px #f64c18;
+}
+
+/* نصف دائرة لليمين */
+.arrow.right {
+  right: -20px;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+
+/* نصف دائرة لليسار */
+.arrow.left {
+  left: -20px;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
